@@ -49,6 +49,7 @@ export const ContextProvider = ({
     }
 
 
+
     const contextValues = {
         users,
         setUsers,
@@ -58,7 +59,7 @@ export const ContextProvider = ({
         toggleRecordsDropdown,
         recordsDropdown,
         recordsCount,
-        setPageRecords
+        setPageRecords,
     }
 
     return (

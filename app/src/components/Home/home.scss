@@ -149,7 +149,7 @@
 
 }
 
-.bin-icon:hover{
+.bin-icon:hover {
     fill: #FF0000;
 }
 
@@ -218,4 +218,39 @@
     padding: 5px;
     border-bottom: 2px solid $background-color;
     text-align: center;
+}
+
+
+.records-pagination {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pagination {
+    margin-right: 28px;
+
+}
+
+.page {
+    margin-right: 17px;
+    text-decoration: none;
+    color: $primary-text-color;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+
+.active {
+    box-shadow: 0px 3px 6px #00000029;
+    padding: 5px 10px;
+    border-radius: 4px;
+    background-color: #C6C6C6;
+}
+
+.page-direction {
+    font-weight: 300;
+
+    &:hover {
+        text-decoration: underline;
+
+    }
 }

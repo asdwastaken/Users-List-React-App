@@ -8,8 +8,7 @@ import statusToggleActive from '../../content/images/status-toggle-active.svg';
 import statusToggleDisabled from '../../content/images/status-toggle-disabled.svg';
 import keyIconActive from '../../content/images/key-icon-active.svg';
 import keyIconDisabled from '../../content/images/key-icon-disabled.svg';
-import binIcon from '../../content/images/bin-icon.svg';
-import settingsIcon from '../../content/images/settings-icon.svg';
+
 import { context } from '../../context/context';
 
 
@@ -26,7 +25,7 @@ export default function Home() {
         toggleRecordsDropdown,
         recordsDropdown,
         recordsCount,
-        setPageRecords
+        setPageRecords,
     } = useContext(context)
 
 
@@ -111,11 +110,18 @@ export default function Home() {
                                         }
                                     </td>
                                     <td id="user-actions">
-                                        {/* <img src={settingsIcon} className="settings-icon" /> */}
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="#C6C6C6" class="settings-icon" viewBox="0 0 16 16">
-                                            <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
-                                        </svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="12.934" height="17.15" viewBox="0 0 12.934 17.15" fill="#c6c6c6"><path className="bin-icon" d="M1.539,16.156a1.883,1.883,0,0,0,1.848,1.905h7.391a1.883,1.883,0,0,0,1.848-1.905V4.723H1.539ZM13.549,1.864H10.316L9.392.912H4.772l-.924.953H.615V3.77H13.549Z" transform="translate(-0.615 -0.912)" /></svg>
+                                        {user.role == 'Admin'
+                                            ?
+                                            <>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="#C6C6C6" className="settings-icon" viewBox="0 0 16 16">
+                                                    <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
+                                                </svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="12.934" height="17.15" viewBox="0 0 12.934 17.15" fill="#c6c6c6"><path className="bin-icon" d="M1.539,16.156a1.883,1.883,0,0,0,1.848,1.905h7.391a1.883,1.883,0,0,0,1.848-1.905V4.723H1.539ZM13.549,1.864H10.316L9.392.912H4.772l-.924.953H.615V3.77H13.549Z" transform="translate(-0.615 -0.912)" /></svg>
+                                            </>
+                                            :
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="12.934" height="17.15" viewBox="0 0 12.934 17.15" fill="#c6c6c6"><path className="bin-icon" d="M1.539,16.156a1.883,1.883,0,0,0,1.848,1.905h7.391a1.883,1.883,0,0,0,1.848-1.905V4.723H1.539ZM13.549,1.864H10.316L9.392.912H4.772l-.924.953H.615V3.77H13.549Z" transform="translate(-0.615 -0.912)" /></svg>
+                                        }
+
                                     </td>
                                 </tr>
                             )
@@ -123,15 +129,26 @@ export default function Home() {
                     </tbody>
                 </table>
             </div>
-            <div className="records">
-                <span className="records-container">Records on page <b>{users.length}</b> <img src={dropdownIcon} onMouseEnter={toggleRecordsDropdown} className="records-dropdown-icon" /></span>
-                {recordsDropdown &&
-                    <div className="records-dropdown" onMouseLeave={toggleRecordsDropdown}>
-                        <input value={recordsCount.firstPage} name='firstPage' type='button' className="records-input" onClick={(e) => setPageRecords(e)} />
-                        <input value={recordsCount.secondPage} name='secondPage' type='button' className="records-input" onClick={(e) => setPageRecords(e)} />
-                        <input value={recordsCount.thirdPage} name='thirdPage' type='button' className="records-input" onClick={(e) => setPageRecords(e)} />
+            <div className="records-pagination">
+                <div className="records">
+                    <span className="records-container">Records on page <b>{users.length}</b> <img src={dropdownIcon} onMouseEnter={toggleRecordsDropdown} className="records-dropdown-icon" /></span>
+                    {recordsDropdown &&
+                        <div className="records-dropdown" onMouseLeave={toggleRecordsDropdown}>
+                            <input value={recordsCount.firstPage} name='firstPage' type='button' className="records-input" onClick={(e) => setPageRecords(e)} />
+                            <input value={recordsCount.secondPage} name='secondPage' type='button' className="records-input" onClick={(e) => setPageRecords(e)} />
+                            <input value={recordsCount.thirdPage} name='thirdPage' type='button' className="records-input" onClick={(e) => setPageRecords(e)} />
+                        </div>
+                    }
+                </div>
+
+                <div className="pagination">
+                    <div className="pagination-container">
+                        <Link className="page page-direction" >Previous</Link>
+                        <Link className="page active" to={'/'} >1</Link>
+                        <Link className="page" to={'/2'}>2</Link>
+                        <Link className="page page-direction" >Next</Link>
                     </div>
-                }
+                </div>
             </div>
         </div>
     )

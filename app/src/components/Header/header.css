@@ -16,7 +16,7 @@
   justify-content: space-between;
 }
 .header-container h1 {
-  font-size: 36px;
+  font-size: 1.8em;
   font-weight: 600;
 }
 .header-container .search-input-container {
@@ -26,7 +26,7 @@
 }
 .header-container .search-input {
   border: none;
-  font-size: 20px;
+  font-size: 1em;
   outline: none;
   font-style: italic;
 }

@@ -60,18 +60,38 @@
         }
     }
 
-    #send-input {
+    .send-input {
         color: #979797;
         background: #C6C6C6;
         font-weight: 600;
         width: 142px;
         border-radius: 20px;
         padding: 10px 16px;
-        margin-top: 40px;
         margin-left: 50px;
         cursor: pointer;
     }
 
+    .validated-btn {
+        color: #FFFFFF;
+        background-color: #33A3DC;
+    }
+
+    .submit-form-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 40px;
+
+    }
+
+    .form-validation {
+        color: #F89797;
+        font-weight: 300;
+    }
+
+    .validated {
+        color: #44D36A;
+    }
 }
 
 

@@ -44,16 +44,32 @@
 .new-user-form .form-role input {
   width: 217px;
 }
-.new-user-form #send-input {
+.new-user-form .send-input {
   color: #979797;
   background: #C6C6C6;
   font-weight: 600;
   width: 142px;
   border-radius: 20px;
   padding: 10px 16px;
-  margin-top: 40px;
   margin-left: 50px;
   cursor: pointer;
+}
+.new-user-form .validated-btn {
+  color: #FFFFFF;
+  background-color: #33A3DC;
+}
+.new-user-form .submit-form-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+}
+.new-user-form .form-validation {
+  color: #F89797;
+  font-weight: 300;
+}
+.new-user-form .validated {
+  color: #44D36A;
 }
 
 .modal-close-btn {

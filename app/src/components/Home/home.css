@@ -54,6 +54,7 @@
   display: flex;
   align-items: center;
   font-size: 0.8em;
+  font-weight: 600;
 }
 .home-table .row #user-heading,
 .home-table .row #user-info {
@@ -90,6 +91,9 @@
   margin-right: 28px;
   width: 10%;
 }
+.home-table .row .table-email {
+  font-weight: 300;
+}
 
 .table-user-icon {
   position: absolute;
@@ -108,4 +112,18 @@
   padding: 5px 12px;
   left: -62px;
   position: absolute;
+}
+
+.key-icon-disabled {
+  padding: 5px 12px;
+  left: -62px;
+  position: absolute;
+}
+
+.disabled {
+  opacity: 35%;
+}
+
+.status-toggle-icon {
+  cursor: pointer;
 }/*# sourceMappingURL=home.css.map */

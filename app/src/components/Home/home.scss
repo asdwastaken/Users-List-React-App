@@ -49,6 +49,7 @@
 
     #table-headings {
 
+
         th {
             display: flex;
         }
@@ -67,13 +68,14 @@
         display: flex;
         align-items: center;
         font-size: 0.8em;
+        font-weight: 600;
 
         #user-heading,
         #user-info {
             width: 40%;
         }
 
-    
+
 
         #status-heading {
             justify-content: center;
@@ -115,7 +117,9 @@
             width: 10%;
         }
 
-
+        .table-email {
+            font-weight: 300;
+        }
 
     }
 
@@ -140,4 +144,19 @@
     padding: 5px 12px;
     left: -62px;
     position: absolute;
+}
+
+.key-icon-disabled {
+    padding: 5px 12px;
+    left: -62px;
+    position: absolute;
+}
+
+
+.disabled {
+    opacity: 35%;
+}
+
+.status-toggle-icon{
+    cursor: pointer;
 }

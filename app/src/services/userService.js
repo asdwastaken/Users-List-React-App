@@ -10,3 +10,8 @@ export const getAll = () => {
             console.log(error);
         })
 }
+
+export const getOne = (userId, users) => {
+    return users.filter(x => x.id === userId);
+}
+

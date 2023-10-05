@@ -1,5 +1,5 @@
 import './header.css';
-import searchIcon from '../../content/images/searchIcon.svg';
+import searchIcon from '../../content/images/search-icon.svg';
 
 
 export default function Header() {

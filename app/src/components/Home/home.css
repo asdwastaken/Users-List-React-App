@@ -1,1 +1,111 @@
-/*# sourceMappingURL=home.css.map */
+.home {
+  position: relative;
+  padding-left: 172px;
+  padding-right: 98px;
+  height: 100vh;
+}
+
+.add-user-btn {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: none;
+  background-color: #305ECA;
+  color: #FFFFFF;
+  font-size: 2.4em;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  left: -16px;
+  top: -36px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.home-table-container {
+  margin-top: 61px;
+}
+
+.home-table {
+  position: relative;
+  width: 100%;
+}
+.home-table .dropdown-icon {
+  margin-left: 28px;
+}
+.home-table #user-dropdown-icon {
+  margin-left: 8px;
+}
+.home-table thead {
+  margin-bottom: 32px;
+}
+.home-table #table-headings th {
+  display: flex;
+}
+.home-table #table-headings div {
+  display: flex;
+}
+.home-table .row {
+  margin-left: 91px;
+  padding-bottom: 31px;
+  padding-top: 37px;
+  border-bottom: 1.87px solid #D8D8D8;
+  display: flex;
+  align-items: center;
+  font-size: 0.8em;
+}
+.home-table .row #user-heading,
+.home-table .row #user-info {
+  width: 40%;
+}
+.home-table .row #status-heading {
+  justify-content: center;
+}
+.home-table .row #actions-heading {
+  justify-content: end;
+  margin-right: 38px;
+  width: 10%;
+}
+.home-table .row th,
+.home-table .row td {
+  width: 25%;
+  display: flex;
+}
+.home-table .row #user-info {
+  flex-direction: column;
+  justify-content: center;
+}
+.home-table .row #user-role {
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+.home-table .row #user-status {
+  justify-content: center;
+  padding-right: 28px;
+}
+.home-table .row #user-actions {
+  justify-content: end;
+  margin-right: 28px;
+  width: 10%;
+}
+
+.table-user-icon {
+  position: absolute;
+  left: 0;
+  width: 45px;
+  height: 45px;
+}
+
+.settings-icon {
+  margin-right: 24px;
+}
+
+.key-icon-active {
+  background-color: #7E7EF1;
+  border-radius: 30px;
+  padding: 5px 12px;
+  left: -62px;
+  position: absolute;
+}/*# sourceMappingURL=home.css.map */

@@ -18,7 +18,7 @@ export default function Home() {
         records,
         toggleStatus,
         newUserModal,
-        addNewUserClick,
+        toggleModal,
     } = useContext(context)
 
 
@@ -35,7 +35,7 @@ export default function Home() {
             <Header />
 
             <div className="home">
-                <Link to="/invite-new-user" className="add-user-btn" onClick={addNewUserClick}>+</Link>
+                <Link to="/invite-new-user" className="add-user-btn" onClick={toggleModal}>+</Link>
 
                 <Table users={users} toggleStatus={toggleStatus} />
 

@@ -12,6 +12,8 @@
 
 }
 
+
+
 .new-user-modal-container {
     background-color: #FFFFFF;
     box-shadow: 0px 0px 30px #00000029;
@@ -21,5 +23,66 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 10;
+    z-index: 11;
+    padding: 72px 83px 79px 73px;
+
+    h1 {
+        font-size: 1.8em;
+        margin-left: 50px;
+        margin-bottom: 81px;
+    }
+}
+
+
+.new-user-form {
+    input {
+        border: none;
+        border-bottom: 2px solid #C6C6C6;
+        outline: none;
+        width: 100%;
+
+    }
+
+    .form-container {
+        margin-top: 62.5px;
+        display: flex;
+
+        #first-name-input {
+            margin-right: 5px;
+        }
+
+    }
+
+
+    .form-role {
+        input {
+            width: 217px;
+        }
+    }
+
+    #send-input {
+        color: #979797;
+        background: #C6C6C6;
+        font-weight: 600;
+        width: 142px;
+        border-radius: 20px;
+        padding: 10px 16px;
+        margin-top: 40px;
+        margin-left: 50px;
+        cursor: pointer;
+    }
+
+}
+
+
+
+.modal-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.form-icon {
+    margin-right: 27px;
 }

@@ -49,8 +49,8 @@ export const ContextProvider = ({
         setRecords(e.target.value);
     }
 
-    const addNewUserClick = () => {
-        setNewUserModal(true);
+    const toggleModal = () => {
+        setNewUserModal(!newUserModal);
     }
 
     const contextValues = {
@@ -63,7 +63,7 @@ export const ContextProvider = ({
         recordsDropdown,
         recordsCount,
         setPageRecords,
-        addNewUserClick,
+        toggleModal,
         newUserModal
     }
 

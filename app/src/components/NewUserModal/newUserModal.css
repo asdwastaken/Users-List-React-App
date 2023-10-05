@@ -19,5 +19,50 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 10;
+  z-index: 11;
+  padding: 72px 83px 79px 73px;
+}
+.new-user-modal-container h1 {
+  font-size: 1.8em;
+  margin-left: 50px;
+  margin-bottom: 81px;
+}
+
+.new-user-form input {
+  border: none;
+  border-bottom: 2px solid #C6C6C6;
+  outline: none;
+  width: 100%;
+}
+.new-user-form .form-container {
+  margin-top: 62.5px;
+  display: flex;
+}
+.new-user-form .form-container #first-name-input {
+  margin-right: 5px;
+}
+.new-user-form .form-role input {
+  width: 217px;
+}
+.new-user-form #send-input {
+  color: #979797;
+  background: #C6C6C6;
+  font-weight: 600;
+  width: 142px;
+  border-radius: 20px;
+  padding: 10px 16px;
+  margin-top: 40px;
+  margin-left: 50px;
+  cursor: pointer;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.form-icon {
+  margin-right: 27px;
 }/*# sourceMappingURL=newUserModal.css.map */

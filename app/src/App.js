@@ -9,15 +9,10 @@ function App() {
 
   return (
     <ContextProvider>
-      <div className="App">
-        <header className="App-header">
-          <Header />
-        </header>
-
+      <div className="App" >
         <main>
           <RoutesComp />
         </main>
-
       </div>
     </ContextProvider>
   );

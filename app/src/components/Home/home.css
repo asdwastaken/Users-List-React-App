@@ -2,7 +2,7 @@
   position: relative;
   padding-left: 172px;
   padding-right: 98px;
-  height: 100vh;
+  padding-bottom: 232px;
 }
 
 .add-user-btn {
@@ -25,6 +25,7 @@
 
 .home-table-container {
   margin-top: 61px;
+  margin-bottom: 42px;
 }
 
 .home-table {
@@ -126,4 +127,42 @@
 
 .status-toggle-icon {
   cursor: pointer;
+}
+
+.records-dropdown-icon {
+  cursor: pointer;
+}
+
+.records {
+  position: relative;
+  width: 200px;
+}
+
+.records-dropdown {
+  width: 100px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: -50px;
+  top: 40px;
+  animation: fade-in 0.3s;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.records-input {
+  cursor: pointer;
+  border: none;
+  font-size: 0.8em;
+  background-color: white;
+  padding: 5px;
+  border-bottom: 2px solid #F3F3F3;
+  text-align: center;
 }/*# sourceMappingURL=home.css.map */

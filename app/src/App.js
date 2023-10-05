@@ -1,22 +1,25 @@
 import './App.css';
 import Header from './components/Header/Header';
 import RoutesComp from './components/RoutesComp';
+import { ContextProvider } from './context/context';
 
 
 function App() {
 
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <Header />
-      </header>
+    <ContextProvider>
+      <div className="App">
+        <header className="App-header">
+          <Header />
+        </header>
 
-      <main>
-        <RoutesComp />
-      </main>
+        <main>
+          <RoutesComp />
+        </main>
 
-    </div>
+      </div>
+    </ContextProvider>
   );
 }
 

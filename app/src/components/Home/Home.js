@@ -1,7 +1,7 @@
 import './home.css';
 import { Link } from 'react-router-dom';
-import { getAll, getOne } from '../../services/userService';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
+import { getAll } from '../../services/userService';
 import dropdownIcon from '../../content/images/dropdown-icon.svg';
 import userIconActive from '../../content/images/table-user-icon-active.svg';
 import statusToggleActive from '../../content/images/status-toggle-active.svg';
@@ -10,36 +10,32 @@ import keyIconActive from '../../content/images/key-icon-active.svg';
 import keyIconDisabled from '../../content/images/key-icon-disabled.svg';
 import binIcon from '../../content/images/bin-icon.svg';
 import settingsIcon from '../../content/images/settings-icon.svg';
+import { context } from '../../context/context';
 
 
 
 
 export default function Home() {
 
-    const [users, setUsers] = useState([]);
-
-    const toggleStatus = (userId) => {
-        const user = getOne(userId, users)[0];
-
-        const updatedUser = {
-            ...user,
-            status: !user.status,
-        }
-
-        setUsers(state => {
-            const updatedState = state.filter(x => x.id !== userId);
-            return [...updatedState, updatedUser]
-        })
-
-    }
+    const {
+        users,
+        setUsers,
+        records,
+        setRecords,
+        toggleStatus,
+        toggleRecordsDropdown,
+        recordsDropdown,
+        recordsCount,
+        setPageRecords
+    } = useContext(context)
 
 
     useEffect(() => {
         getAll()
             .then(result => {
-                setUsers(result)
+                setUsers(result.slice(0, records))
             })
-    }, [])
+    }, [records])
 
     return (
         <div className="home">
@@ -124,7 +120,16 @@ export default function Home() {
                     </tbody>
                 </table>
             </div>
-            <span>Records on page {users.length}</span>
+            <div className="records">
+                <span className="records-container">Records on page <b>{users.length}</b> <img src={dropdownIcon} onMouseEnter={toggleRecordsDropdown} className="records-dropdown-icon" /></span>
+                {recordsDropdown &&
+                    <div className="records-dropdown" onMouseLeave={toggleRecordsDropdown}>
+                        <input value={recordsCount.firstPage} name='firstPage' type='button' className="records-input" onClick={(e) => setPageRecords(e)} />
+                        <input value={recordsCount.secondPage} name='secondPage' type='button' className="records-input" onClick={(e) => setPageRecords(e)} />
+                        <input value={recordsCount.thirdPage} name='thirdPage' type='button' className="records-input" onClick={(e) => setPageRecords(e)} />
+                    </div>
+                }
+            </div>
         </div>
     )
 }

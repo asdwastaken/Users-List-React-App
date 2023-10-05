@@ -117,6 +117,7 @@
         }
 
         #user-actions {
+            align-items: center;
             justify-content: end;
             margin-right: 28px;
             width: 10%;
@@ -140,8 +141,17 @@
 
 .settings-icon {
     margin-right: 24px;
+    cursor: pointer;
+
+    &:hover {
+        fill: #44A0D3;
+    }
+
 }
 
+.bin-icon:hover{
+    fill: #FF0000;
+}
 
 .key-icon-active {
     background-color: #7E7EF1;

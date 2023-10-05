@@ -88,6 +88,7 @@
   padding-right: 28px;
 }
 .home-table .row #user-actions {
+  align-items: center;
   justify-content: end;
   margin-right: 28px;
   width: 10%;
@@ -105,6 +106,14 @@
 
 .settings-icon {
   margin-right: 24px;
+  cursor: pointer;
+}
+.settings-icon:hover {
+  fill: #44A0D3;
+}
+
+.bin-icon:hover {
+  fill: #FF0000;
 }
 
 .key-icon-active {

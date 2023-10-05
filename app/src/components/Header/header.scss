@@ -1,0 +1,42 @@
+.header {
+    background-color: #FFFFFF;
+    height: 211px;
+    display: flex;
+    justify-content: center;
+    padding-left: 276px;
+    padding-right: 98px;
+    box-shadow: 0px 3px 6px #00000029;
+}
+
+.header-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+
+    h1 {
+        font-size: 36px;
+        font-weight: 600;
+    }
+
+    .search-input-container {
+        width: 356px;
+        position: relative;
+        border-bottom: 1px solid #707070;
+
+    }
+
+    .search-input {
+        border: none;
+        font-size: 20px;
+        outline: none;
+        font-style: italic;
+    }
+
+    .search-icon {
+        position: absolute;
+        right: 0;
+    }
+}

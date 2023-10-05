@@ -1,1 +1,11 @@
-/*# sourceMappingURL=App.css.map */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #000000;
+  background-color: #F3F3F3;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}/*# sourceMappingURL=App.css.map */

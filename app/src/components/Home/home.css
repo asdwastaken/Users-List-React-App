@@ -17,7 +17,7 @@
   display: flex;
   justify-content: center;
   position: relative;
-  left: -16px;
+  left: -14px;
   top: -36px;
   cursor: pointer;
   text-decoration: none;
@@ -103,8 +103,11 @@
   height: 45px;
 }
 
-.settings-icon {
+.settings-icon-link {
   margin-right: 24px;
+}
+
+.settings-icon {
   cursor: pointer;
 }
 .settings-icon:hover {

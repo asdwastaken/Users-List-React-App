@@ -93,12 +93,34 @@
     .form-role {
         input {
             width: 217px;
+
         }
 
         label {
             left: 50px;
         }
+
+        .arrow-form-icon {
+            position: absolute;
+            bottom: 12px;
+            left: 250px;
+        }
+
+
+        .role-select {
+            width: 217px;
+            border: none;
+            border-bottom: 2px solid #C6C6C6;
+            outline: none;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            -webkit-appearance: none;
+            color: #C6C6C6;
+            cursor: pointer;
+
+        }
     }
+
 
     .form-email {
         label {

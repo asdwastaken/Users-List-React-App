@@ -18,6 +18,8 @@ export default function Home() {
         toggleStatus,
         newUserModal,
         toggleModal,
+        deleteUserModal,
+        toggleDeleteModal
     } = useContext(context)
 
 
@@ -26,10 +28,12 @@ export default function Home() {
     return (
         <>
             {newUserModal && < Outlet />}
+            {deleteUserModal && < Outlet />}
+
             <Header />
             <div className="home">
                 <Link to="/invite-new-user" className="add-user-btn" onClick={toggleModal}>+</Link>
-                <Table users={users} toggleStatus={toggleStatus} setUsers={setUsers} records={records} />
+                <Table users={users} toggleStatus={toggleStatus} setUsers={setUsers} records={records} toggleDeleteModal={toggleDeleteModal} />
                 <RecordsPagination />
             </div>
 

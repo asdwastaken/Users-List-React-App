@@ -183,12 +183,6 @@
   font-size: 0.8em;
   font-weight: 600;
 }
-.user-setup-container .details-section .edit-user-form .submit-edit-form-container {
-  display: flex;
-  align-items: center;
-  margin-top: 130px;
-  position: relative;
-}
 .user-setup-container .details-section .edit-user-form .edit-form-validation {
   color: #F89797;
   font-weight: 300;
@@ -198,6 +192,12 @@
 }
 .user-setup-container .details-section .edit-user-form .validated {
   color: #44D36A;
+}
+.user-setup-container .submit-edit-form-container {
+  display: flex;
+  align-items: center;
+  margin-top: 130px;
+  position: relative;
 }
 .user-setup-container .permissions-section {
   width: 30%;

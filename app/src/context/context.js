@@ -13,6 +13,7 @@ export const ContextProvider = ({
     const [records, setRecords] = useState(5);
     const [recordsDropdown, setRecordsDropdown] = useState(false);
     const [newUserModal, setNewUserModal] = useState(false);
+    const [deleteUserModal, setDeleteUserModal] = useState(false);
 
 
     const toggleStatus = (userId) => {
@@ -53,6 +54,11 @@ export const ContextProvider = ({
         setNewUserModal(!newUserModal);
     }
 
+    const toggleDeleteModal = ()=>{
+        setDeleteUserModal(!deleteUserModal);
+
+    }
+
     const contextValues = {
         users,
         setUsers,
@@ -64,7 +70,9 @@ export const ContextProvider = ({
         recordsCount,
         setPageRecords,
         toggleModal,
-        newUserModal
+        newUserModal,
+        toggleDeleteModal,
+        deleteUserModal
     }
 
     return (

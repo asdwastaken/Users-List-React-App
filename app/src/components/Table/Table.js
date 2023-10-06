@@ -7,7 +7,7 @@ import keyIconActive from '../../content/images/key-icon-active.svg';
 import keyIconDisabled from '../../content/images/key-icon-disabled.svg';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { getAll } from '../../services/userService';
+import { getAll, getOne } from '../../services/userService';
 
 
 
@@ -16,7 +16,7 @@ export default function Table({
     toggleStatus,
     records,
     setUsers,
-
+    toggleDeleteModal
 }) {
 
     const [sortOrder, setSortOrder] = useState('asc');
@@ -109,7 +109,7 @@ export default function Table({
 
 
                 <tbody>
-                    {users.map(user => {
+                    {users.sort((a, b) => a.id - b.id).map(user => {
                         return (
                             <tr className={user.status ? "row" : "row disabled"} key={user.id}>
                                 <td className="table-user-icon-container">
@@ -162,13 +162,13 @@ export default function Table({
                                                     <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
                                                 </svg>
                                             </Link>
-                                            <Link className="bin-icon-link" to={`/user/delete/${user.id}`}>
+                                            <Link className="bin-icon-link" to={`/user/delete/${user.id}`} onClick={toggleDeleteModal}>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="12.934" height="17.15" viewBox="0 0 12.934 17.15" fill="#c6c6c6"><path className="bin-icon" d="M1.539,16.156a1.883,1.883,0,0,0,1.848,1.905h7.391a1.883,1.883,0,0,0,1.848-1.905V4.723H1.539ZM13.549,1.864H10.316L9.392.912H4.772l-.924.953H.615V3.77H13.549Z" transform="translate(-0.615 -0.912)" /></svg>
                                             </Link>
 
                                         </>
                                         :
-                                        <Link className="bin-icon-link" to={`/user/delete/${user.id}`}>
+                                        <Link className="bin-icon-link" to={`/user/delete/${user.id}`} onClick={toggleDeleteModal}>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="12.934" height="17.15" viewBox="0 0 12.934 17.15" fill="#c6c6c6"><path className="bin-icon" d="M1.539,16.156a1.883,1.883,0,0,0,1.848,1.905h7.391a1.883,1.883,0,0,0,1.848-1.905V4.723H1.539ZM13.549,1.864H10.316L9.392.912H4.772l-.924.953H.615V3.77H13.549Z" transform="translate(-0.615 -0.912)" /></svg>
                                         </Link>
 

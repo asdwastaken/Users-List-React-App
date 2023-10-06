@@ -221,12 +221,7 @@
                 font-weight: 600;
             }
 
-            .submit-edit-form-container {
-                display: flex;
-                align-items: center;
-                margin-top: 130px;
-                position: relative;
-            }
+            
 
             .edit-form-validation {
                 color: #F89797;
@@ -243,6 +238,13 @@
 
 
 
+    }
+
+    .submit-edit-form-container {
+        display: flex;
+        align-items: center;
+        margin-top: 130px;
+        position: relative;
     }
 
     .permissions-section {

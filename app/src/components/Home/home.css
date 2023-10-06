@@ -96,11 +96,21 @@
   font-weight: 300;
 }
 
-.table-user-icon {
+.table-user-icon-container {
   position: absolute;
   left: 0;
   width: 45px;
   height: 45px;
+}
+.table-user-icon-container div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.table-user-icon-container .table-user-icon {
+  position: absolute;
+  width: 41px;
+  height: 41px;
 }
 
 .settings-icon-link {

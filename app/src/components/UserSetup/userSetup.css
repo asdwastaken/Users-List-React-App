@@ -14,4 +14,30 @@
   top: -36px;
   cursor: pointer;
   text-decoration: none;
+}
+
+.user-setup-container .photo-section {
+  display: flex;
+  flex-direction: column;
+}
+.user-setup-container .photo-section .photo-icon-container {
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.user-setup-container .photo-section .photo-icon {
+  width: 210px;
+  height: 210px;
+  position: absolute;
+}
+.user-setup-container .photo-section .photo-key-icon {
+  position: absolute;
+  background-color: #7E7EF1;
+  border-radius: 30px;
+  padding: 14px 26px;
+  right: -10px;
+  bottom: 10px;
 }/*# sourceMappingURL=userSetup.css.map */

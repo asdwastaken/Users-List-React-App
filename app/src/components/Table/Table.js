@@ -1,5 +1,6 @@
 import dropdownIcon from '../../content/images/dropdown-icon.svg';
 import userIconActive from '../../content/images/table-user-icon-active.svg';
+import userIconBG from '../../content/images/table-user-icon-bg.svg';
 import statusToggleActive from '../../content/images/status-toggle-active.svg';
 import statusToggleDisabled from '../../content/images/status-toggle-disabled.svg';
 import keyIconActive from '../../content/images/key-icon-active.svg';
@@ -57,8 +58,11 @@ export default function Table({
                     {users.sort((a, b) => a.id - b.id).map(user => {
                         return (
                             <tr className={user.status ? "row" : "row disabled"} key={user.id}>
-                                <td className="table-user-icon">
-                                    <img src={userIconActive} />
+                                <td className="table-user-icon-container">
+                                    <div>
+                                        <img src={userIconActive} className="table-user-icon" />
+                                        <img src={userIconBG} />
+                                    </div>
                                 </td>
                                 <td id="user-info">
                                     <div className="table-name">

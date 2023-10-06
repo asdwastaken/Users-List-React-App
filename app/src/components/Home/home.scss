@@ -129,14 +129,26 @@
 }
 
 
-.table-user-icon {
+.table-user-icon-container {
     position: absolute;
     left: 0;
     width: 45px;
     height: 45px;
+
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .table-user-icon {
+        position: absolute;
+        width: 41px;
+        height: 41px;
+    }
 }
 
-.settings-icon-link{
+.settings-icon-link {
     margin-right: 24px;
 
 }

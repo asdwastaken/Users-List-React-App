@@ -20,6 +20,10 @@ export default function Table({
 }) {
 
     const [sortOrder, setSortOrder] = useState('asc');
+    const [sortRole, setSortRole] = useState('User');
+    const [sortStatus, setSortStatus] = useState(false);
+
+
 
     useEffect(() => {
         getAll()
@@ -28,7 +32,7 @@ export default function Table({
             })
     }, [records])
 
-    const sortUsers = () => {
+    const sortUsersByName = () => {
         getAll()
             .then((result) => {
                 const sortedUsers = result.slice(0, records);
@@ -43,23 +47,55 @@ export default function Table({
             })
     }
 
+    const sortUsersByRole = () => {
+        getAll()
+            .then((result) => {
+                const sortedUsers = result.slice(0, records);
+                if (sortRole === false) {
+                    sortedUsers.sort((a, b) => a.role.localeCompare(b.role));
+                    setSortRole(true);
+                } else {
+                    sortedUsers.sort((a, b) => b.role.localeCompare(a.role));
+                    setSortRole(false);
+                }
+                setUsers(sortedUsers);
+            })
+    }
+
+    const sortUsersByStatus = () => {
+        getAll()
+            .then((result) => {
+                const sortedUsers = result.slice(0, records);
+                if (sortStatus === 'User') {
+                    sortedUsers.sort((a, b) => a.status - b.status);
+                    setSortStatus('Admin');
+                } else {
+                    sortedUsers.sort((a, b) => b.status - a.status);
+                    setSortStatus('User');
+                }
+                setUsers(sortedUsers);
+            })
+    }
+
+
+
     return (
         <div className="home-table-container">
             <table className="home-table">
                 <thead>
                     <tr className="row" id="table-headings">
                         <th id="user-heading">
-                            <div onClick={sortUsers}>
+                            <div onClick={sortUsersByName}>
                                 User <img src={dropdownIcon} className="dropdown-icon" id="user-dropdown-icon" />
                             </div>
                         </th>
                         <th id="role-heading">
-                            <div >
+                            <div onClick={sortUsersByRole}>
                                 Role <img src={dropdownIcon} className="dropdown-icon" />
                             </div>
                         </th>
                         <th id="status-heading" >
-                            <div >
+                            <div onClick={sortUsersByStatus}>
                                 Status <img src={dropdownIcon} className="dropdown-icon" />
                             </div>
                         </th>

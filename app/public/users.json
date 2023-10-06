@@ -5,7 +5,25 @@
         "last_name": "Doe",
         "email": "john.doe@example.com",
         "role": "Admin",
-        "status": true
+        "status": true,
+        "permissions": {
+            "permission_1": true,
+            "permission_12": true,
+            "permission_13": true,
+            "permission_14": true,
+            "permission_15": true,
+            "permission_16": true,
+            "permission_17": true,
+            "permission_18": true,
+            "permission_19": true,
+            "permission_20": true,
+            "permission_21": true,
+            "permission_22": true,
+            "permission_23": true,
+            "permission_24": true,
+            "permission_25": true
+        }
+       
     },
     {
         "id": 2,
@@ -13,7 +31,24 @@
         "last_name": "Smith",
         "email": "jane.smith@example.com",
         "role": "User",
-        "status": true
+        "status": true,
+        "permissions": {
+            "permission_1": true,
+            "permission_12": true,
+            "permission_13": true,
+            "permission_14": true,
+            "permission_15": false,
+            "permission_16": false,
+            "permission_17": true,
+            "permission_18": true,
+            "permission_19": false,
+            "permission_20": false,
+            "permission_21": false,
+            "permission_22": true,
+            "permission_23": true,
+            "permission_24": false,
+            "permission_25": true
+        }
     },
     {
         "id": 3,
@@ -21,7 +56,24 @@
         "last_name": "Johnson",
         "email": "david.johnson@example.com",
         "role": "Admin",
-        "status": true
+        "status": true,
+        "permissions": {
+            "permission_1": true,
+            "permission_12": true,
+            "permission_13": true,
+            "permission_14": true,
+            "permission_15": true,
+            "permission_16": false,
+            "permission_17": false,
+            "permission_18": true,
+            "permission_19": false,
+            "permission_20": false,
+            "permission_21": false,
+            "permission_22": true,
+            "permission_23": true,
+            "permission_24": true,
+            "permission_25": true
+        }
     },
     {
         "id": 4,
@@ -29,7 +81,24 @@
         "last_name": "Williams",
         "email": "emily.williams@example.com",
         "role": "User",
-        "status": true
+        "status": true,
+        "permissions": {
+            "permission_1": true,
+            "permission_12": true,
+            "permission_13": true,
+            "permission_14": true,
+            "permission_15": false,
+            "permission_16": false,
+            "permission_17": true,
+            "permission_18": true,
+            "permission_19": true,
+            "permission_20": false,
+            "permission_21": false,
+            "permission_22": true,
+            "permission_23": true,
+            "permission_24": true,
+            "permission_25": true
+        }
     },
     {
         "id": 5,
@@ -37,7 +106,24 @@
         "last_name": "Brown",
         "email": "michael.brown@example.com",
         "role": "Admin",
-        "status": true
+        "status": true,
+        "permissions": {
+            "permission_1": true,
+            "permission_12": true,
+            "permission_13": true,
+            "permission_14": true,
+            "permission_15": true,
+            "permission_16": false,
+            "permission_17": true,
+            "permission_18": true,
+            "permission_19": true,
+            "permission_20": false,
+            "permission_21": false,
+            "permission_22": true,
+            "permission_23": true,
+            "permission_24": true,
+            "permission_25": true
+        }
     },
     {
         "id": 6,
@@ -45,7 +131,24 @@
         "last_name": "Davis",
         "email": "olivia.davis@example.com",
         "role": "User",
-        "status": true
+        "status": true,
+        "permissions": {
+            "permission_1": true,
+            "permission_12": true,
+            "permission_13": true,
+            "permission_14": true,
+            "permission_15": true,
+            "permission_16": false,
+            "permission_17": true,
+            "permission_18": true,
+            "permission_19": true,
+            "permission_20": false,
+            "permission_21": false,
+            "permission_22": true,
+            "permission_23": true,
+            "permission_24": true,
+            "permission_25": true
+        }
     },
     {
         "id": 7,
@@ -133,7 +236,24 @@
         "last_name": "Walker",
         "email": "matthew.walker@example.com",
         "role": "Admin",
-        "status": true
+        "status": true,
+        "permissions": {
+            "permission_1": true,
+            "permission_12": true,
+            "permission_13": true,
+            "permission_14": true,
+            "permission_15": true,
+            "permission_16": false,
+            "permission_17": true,
+            "permission_18": true,
+            "permission_19": true,
+            "permission_20": false,
+            "permission_21": false,
+            "permission_22": true,
+            "permission_23": true,
+            "permission_24": true,
+            "permission_25": true
+        }
     },
     {
         "id": 18,
@@ -141,7 +261,24 @@
         "last_name": "Hall",
         "email": "amelia.hall@example.com",
         "role": "User",
-        "status": true
+        "status": true,
+        "permissions": {
+            "permission_1": true,
+            "permission_12": true,
+            "permission_13": true,
+            "permission_14": true,
+            "permission_15": true,
+            "permission_16": true,
+            "permission_17": true,
+            "permission_18": true,
+            "permission_19": true,
+            "permission_20": true,
+            "permission_21": true,
+            "permission_22": true,
+            "permission_23": true,
+            "permission_24": true,
+            "permission_25": true
+        }
     },
     {
         "id": 19,
@@ -149,7 +286,24 @@
         "last_name": "Young",
         "email": "andrew.young@example.com",
         "role": "Admin",
-        "status": true
+        "status": true,
+        "permissions": {
+            "permission_1": true,
+            "permission_12": true,
+            "permission_13": true,
+            "permission_14": true,
+            "permission_15": true,
+            "permission_16": true,
+            "permission_17": true,
+            "permission_18": true,
+            "permission_19": true,
+            "permission_20": true,
+            "permission_21": true,
+            "permission_22": true,
+            "permission_23": true,
+            "permission_24": true,
+            "permission_25": true
+        }
     },
     {
         "id": 20,
@@ -157,6 +311,23 @@
         "last_name": "Scott",
         "email": "sophie.scott@example.com",
         "role": "User",
-        "status": true
+        "status": true,
+        "permissions": {
+            "permission_1": true,
+            "permission_12": true,
+            "permission_13": true,
+            "permission_14": true,
+            "permission_15": true,
+            "permission_16": true,
+            "permission_17": true,
+            "permission_18": true,
+            "permission_19": true,
+            "permission_20": true,
+            "permission_21": true,
+            "permission_22": true,
+            "permission_23": true,
+            "permission_24": true,
+            "permission_25": true
+        }
     }
 ]

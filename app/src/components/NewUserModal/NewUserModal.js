@@ -5,16 +5,18 @@ import faceIcon from '../../content/images/form-face.svg';
 import keyIcon from '../../content/images/form-key.svg';
 import { useContext, useEffect, useState } from 'react';
 import { context } from '../../context/context';
-import { validateField, validateFields } from '../../functions/validations';
+import { validateFields } from '../../functions/validations';
+import { create } from '../../services/userService';
 
 
 
 export default function NewUserModal() {
 
-    const { toggleModal } = useContext(context);
+    const { toggleModal, setUsers, users } = useContext(context);
+
     const [inputValues, setInputValues] = useState({
-        firstName: '',
-        lastName: '',
+        first_name: '',
+        last_name: '',
         email: '',
         role: ''
     })
@@ -31,6 +33,23 @@ export default function NewUserModal() {
     }, [inputValues])
 
 
+    const onSubmitHandler = (e) => {
+        e.preventDefault();
+        const newUser = {
+            ...inputValues,
+            id: users.length + 1,
+            status: true,
+        };
+
+        create(newUser)
+            .then(() => {
+                setUsers(state => [...state, newUser])
+            })
+
+
+
+    }
+
     return (
         <>
             <div className="new-user-modal" onClick={toggleModal}>
@@ -39,16 +58,17 @@ export default function NewUserModal() {
             <div className="new-user-modal-container">
                 <img src={closeX} className="modal-close-btn" onClick={toggleModal} />
                 <h1>Invite New User</h1>
-                <form className="new-user-form">
+
+                <form className="new-user-form" onSubmit={(e) => onSubmitHandler(e)}>
                     <div className="form-names form-container">
                         <img src={faceIcon} className="form-icon" />
                         <div id="first-name-container">
-                            <input placeholder='' id='first-name-input' type='text' name='firstName' value={inputValues.firstName} onChange={onChangeHandler} />
-                            <label htmlFor='firstName'>* First Name</label>
+                            <input placeholder='' id='first-name-input' type='text' name='first_name' value={inputValues.first_name} onChange={onChangeHandler} />
+                            <label htmlFor='first_name'>* First Name</label>
                         </div>
                         <div>
-                            <input placeholder='' type='text' name='lastName' value={inputValues.lastName} onChange={onChangeHandler} />
-                            <label htmlFor='lastName'>* Last Name</label>
+                            <input placeholder='' type='text' name='last_name' value={inputValues.last_name} onChange={onChangeHandler} />
+                            <label htmlFor='last_name'>* Last Name</label>
                         </div>
                     </div>
 

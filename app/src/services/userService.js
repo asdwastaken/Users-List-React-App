@@ -11,6 +11,20 @@ export const getAll = () => {
         })
 }
 
+export const create = (userData) => {
+    return fetch(url, {
+        method: 'POST',
+        headers: {
+            "content-type": "application/json"
+        },
+        body: JSON.stringify(userData)
+    })
+
+        .catch(error => {
+            console.log(`Error: ${error}`);
+        })
+}
+
 export const getOne = (userId, users) => {
     return users.filter(x => x.id === userId);
 }

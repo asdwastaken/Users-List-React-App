@@ -6,7 +6,7 @@ import statusToggleDisabled from '../../content/images/status-toggle-disabled.sv
 import keyIconActive from '../../content/images/key-icon-active.svg';
 import keyIconDisabled from '../../content/images/key-icon-disabled.svg';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { getAll } from '../../services/userService';
 
 
@@ -16,8 +16,10 @@ export default function Table({
     toggleStatus,
     records,
     setUsers,
-    
+
 }) {
+
+    const [sortOrder, setSortOrder] = useState('asc');
 
     useEffect(() => {
         getAll()
@@ -26,13 +28,28 @@ export default function Table({
             })
     }, [records])
 
+    const sortUsers = () => {
+        getAll()
+            .then((result) => {
+                const sortedUsers = result.slice(0, records);
+                if (sortOrder === 'asc') {
+                    sortedUsers.sort((a, b) => a.first_name.localeCompare(b.first_name));
+                    setSortOrder('desc');
+                } else {
+                    sortedUsers.sort((a, b) => b.first_name.localeCompare(a.first_name));
+                    setSortOrder('asc');
+                }
+                setUsers(sortedUsers);
+            })
+    }
+
     return (
         <div className="home-table-container">
             <table className="home-table">
                 <thead>
                     <tr className="row" id="table-headings">
                         <th id="user-heading">
-                            <div >
+                            <div onClick={sortUsers}>
                                 User <img src={dropdownIcon} className="dropdown-icon" id="user-dropdown-icon" />
                             </div>
                         </th>
@@ -56,7 +73,7 @@ export default function Table({
 
 
                 <tbody>
-                    {users.sort((a, b) => a.id - b.id).map(user => {
+                    {users.map(user => {
                         return (
                             <tr className={user.status ? "row" : "row disabled"} key={user.id}>
                                 <td className="table-user-icon-container">

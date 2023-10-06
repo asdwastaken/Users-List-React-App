@@ -1,4 +1,13 @@
+.edit {
+  padding-left: 192px;
+  padding-right: 76px;
+  padding-bottom: 245px;
+}
+
 .settings-page-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 72px;
   height: 72px;
   border-radius: 50%;
@@ -6,9 +15,6 @@
   background-color: #C6C6C6;
   font-size: 2.4em;
   font-weight: 300;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
   left: -14px;
   top: -36px;
@@ -16,17 +22,43 @@
   text-decoration: none;
 }
 
+.user-setup-container {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
 .user-setup-container .photo-section {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 232px;
 }
 .user-setup-container .photo-section .photo-icon-container {
   position: relative;
   width: -moz-fit-content;
   width: fit-content;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+}
+.user-setup-container .photo-section .photo-input {
+  margin-top: 14px;
+  color: transparent;
+  cursor: pointer;
+  width: 120px;
+}
+.user-setup-container .photo-section .photo-input::before {
+  content: "UPLOAD A PHOTO";
+  color: #B0ACAC;
+  border: none;
+  font-size: 14px;
+  font-weight: 300;
+  background-color: transparent;
+  outline: none;
+  width: 100px;
+}
+.user-setup-container .photo-section .photo-input::-webkit-file-upload-button {
+  visibility: hidden;
 }
 .user-setup-container .photo-section .photo-icon {
   width: 210px;
@@ -38,6 +70,131 @@
   background-color: #7E7EF1;
   border-radius: 30px;
   padding: 14px 26px;
-  right: -10px;
-  bottom: 10px;
+  right: 0;
+  bottom: 16px;
+}
+.user-setup-container .photo-section h1 {
+  margin-top: 31px;
+  font-size: 2.4em;
+  font-weight: 600;
+  max-width: 232px;
+  word-wrap: break-word;
+  margin-bottom: 13px;
+}
+.user-setup-container .photo-section span {
+  font-size: 0.8em;
+  font-weight: 300;
+}
+.user-setup-container .photo-section .resend-invite-btn {
+  background-color: #7E7EF1;
+  color: #FFFFFF;
+  text-decoration: none;
+  border-radius: 100px;
+  padding: 18px 42px 20px 42px;
+  width: 209px;
+  height: 59px;
+  margin-top: 59px;
+  font-size: 0.8em;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
+}
+.user-setup-container .details-section {
+  width: 332px;
+  position: relative;
+}
+.user-setup-container .details-section h1 {
+  margin-bottom: 55px;
+  margin-right: 100px;
+}
+.user-setup-container .details-section .details-status {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.user-setup-container .details-section .details-status img {
+  margin-right: 12px;
+}
+.user-setup-container .details-section .details-status span {
+  font-size: 0.8em;
+}
+.user-setup-container .details-section .edit-user-form {
+  margin-top: 69px;
+  margin-left: 53px;
+}
+.user-setup-container .details-section .edit-user-form input {
+  border: none;
+  border-bottom: 2px solid #C6C6C6;
+  background-color: transparent;
+  outline: none;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.user-setup-container .details-section .edit-user-form input:not(:-moz-placeholder-shown) ~ label {
+  color: #33A3DC;
+  top: -25px;
+}
+.user-setup-container .details-section .edit-user-form input:focus ~ label, .user-setup-container .details-section .edit-user-form input:not(:placeholder-shown) ~ label {
+  color: #33A3DC;
+  top: -25px;
+}
+.user-setup-container .details-section .edit-user-form .edit-form-container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  margin-top: 48.5px;
+}
+.user-setup-container .details-section .edit-user-form .edit-form-container div {
+  width: 100%;
+  position: relative;
+  padding-left: 20px;
+}
+.user-setup-container .details-section .edit-user-form .edit-form-container label {
+  font-size: 0.8em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #C6C6C6;
+  cursor: text;
+  height: 1px;
+}
+.user-setup-container .details-section .edit-user-form .send-edit-input {
+  color: #979797;
+  background: #C6C6C6;
+  font-weight: 600;
+  width: 209px;
+  border-radius: 100px;
+  height: 59px;
+  padding: 18px 54px 20px 55px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
+  cursor: pointer;
+}
+.user-setup-container .details-section .edit-user-form .validated-btn {
+  color: #FFFFFF;
+  background-color: #44A0D3;
+  padding: 18px 54px 20px 55px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
+  border-radius: 100px;
+  width: 209px;
+  height: 59px;
+  font-size: 0.8em;
+  font-weight: 600;
+}
+.user-setup-container .details-section .edit-user-form .submit-edit-form-container {
+  display: flex;
+  align-items: center;
+  margin-top: 59px;
+  position: relative;
+}
+.user-setup-container .details-section .edit-user-form .edit-form-validation {
+  color: #F89797;
+  font-weight: 300;
+  width: 100px;
+  position: absolute;
+  right: -50px;
+}
+.user-setup-container .details-section .edit-user-form .validated {
+  color: #44D36A;
+}
+.user-setup-container .permissions-section {
+  width: 40%;
 }/*# sourceMappingURL=userSetup.css.map */

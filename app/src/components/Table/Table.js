@@ -15,13 +15,14 @@ export default function Table({
     users,
     toggleStatus,
     records,
-    setUsers
+    setUsers,
+    
 }) {
 
     useEffect(() => {
         getAll()
             .then(result => {
-                setUsers(result.slice(0, records))
+                setUsers(result.slice(0, records));
             })
     }, [records])
 

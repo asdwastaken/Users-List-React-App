@@ -1,5 +1,5 @@
 @import '../../styles/variables';
-
+@import '../../styles/mixins';
 
 .home {
     position: relative;
@@ -136,9 +136,8 @@
     height: 45px;
 
     div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexCenter;
+
     }
 
     .table-user-icon {

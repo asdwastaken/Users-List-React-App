@@ -12,8 +12,8 @@ export default function RoutesComp() {
             <Route path="/" element={<Home />} >
                 <Route path="/invite-new-user" element={<NewUserModal />} />
             </Route>
+            <Route path="/user/edit/:userId" element={<UserSetup />} />
             <Route path="/:pageCount" element={<Home />} />
-            <Route path="/user/edit/:userId" element={<Home />} />
 
 
         </Routes>

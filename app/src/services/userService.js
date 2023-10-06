@@ -1,4 +1,4 @@
-const url = 'users.json';
+const url = '/users.json';
 
 export const getAll = () => {
     return fetch(url)
@@ -7,7 +7,7 @@ export const getAll = () => {
             return users;
         })
         .catch(error => {
-            console.log(error);
+            console.log(`Error: ${error}`);
         })
 }
 

@@ -33,16 +33,49 @@
   border-bottom: 2px solid #C6C6C6;
   outline: none;
   width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.new-user-form input:not(:-moz-placeholder-shown) ~ label {
+  color: #33A3DC;
+  top: -25px;
+}
+.new-user-form input:focus ~ label, .new-user-form input:not(:placeholder-shown) ~ label {
+  color: #33A3DC;
+  top: -25px;
 }
 .new-user-form .form-container {
   margin-top: 62.5px;
   display: flex;
+  position: relative;
 }
 .new-user-form .form-container #first-name-input {
   margin-right: 5px;
 }
+.new-user-form .form-container div {
+  width: 100%;
+  position: relative;
+}
+.new-user-form .form-container #first-name-container {
+  margin-right: 5px;
+}
+.new-user-form .form-container label {
+  font-size: 0.8em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #C6C6C6;
+  cursor: text;
+  height: 1px;
+}
 .new-user-form .form-role input {
   width: 217px;
+}
+.new-user-form .form-role label {
+  left: 50px;
+}
+.new-user-form .form-email label {
+  left: 50px;
 }
 .new-user-form .send-input {
   color: #979797;

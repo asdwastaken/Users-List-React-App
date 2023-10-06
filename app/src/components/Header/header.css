@@ -22,7 +22,7 @@
 .header-container .search-input-container {
   width: 356px;
   position: relative;
-  border-bottom: 1px solid #707070;
+  border-bottom: 2px solid #707070;
 }
 .header-container .search-input {
   border: none;

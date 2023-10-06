@@ -20,7 +20,7 @@ export default function NewUserModal() {
     })
 
     const [requiredFields, setRequiredFields] = useState(false);
-    
+
 
     const onChangeHandler = (e) => {
         setInputValues(state => ({ ...state, [e.target.name]: e.target.value }))
@@ -42,19 +42,27 @@ export default function NewUserModal() {
                 <form className="new-user-form">
                     <div className="form-names form-container">
                         <img src={faceIcon} className="form-icon" />
-                        <input placeholder='* First Name' id='first-name-input' type='text' name='firstName' value={inputValues.firstName} onChange={onChangeHandler} />
-                        <input placeholder='* Last Name' type='text' name='lastName' value={inputValues.lastName} onChange={onChangeHandler} />
+                        <div id="first-name-container">
+                            <input placeholder='' id='first-name-input' type='text' name='firstName' value={inputValues.firstName} onChange={onChangeHandler} />
+                            <label htmlFor='firstName'>* First Name</label>
+                        </div>
+                        <div>
+                            <input placeholder='' type='text' name='lastName' value={inputValues.lastName} onChange={onChangeHandler} />
+                            <label htmlFor='lastName'>* Last Name</label>
+                        </div>
                     </div>
 
                     <div className="form-email form-container">
                         <img src={emailIcon} className="form-icon" />
-                        <input placeholder='* Email' type='email' name='email' value={inputValues.email} onChange={onChangeHandler} />
+                        <input placeholder='' type='email' name='email' value={inputValues.email} onChange={onChangeHandler} />
+                        <label htmlFor='email'>* Email</label>
                     </div>
 
 
                     <div className="form-role form-container">
                         <img src={keyIcon} className="form-icon" />
-                        <input placeholder='* Role' name='role' value={inputValues.role} onChange={onChangeHandler} />
+                        <input placeholder='' name='role' value={inputValues.role} onChange={onChangeHandler} />
+                        <label htmlFor='role'>* Role</label>
                     </div>
 
                     <div className="submit-form-container">

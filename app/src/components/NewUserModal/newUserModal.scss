@@ -40,15 +40,48 @@
         border-bottom: 2px solid #C6C6C6;
         outline: none;
         width: 100%;
+        padding-top: 5px;
+        padding-bottom: 5px;
 
+
+        &:focus~label,
+        &:not(:placeholder-shown)~label {
+            color: #33A3DC;
+            top: -25px;
+        }
     }
+
+
 
     .form-container {
         margin-top: 62.5px;
         display: flex;
+        position: relative;
 
         #first-name-input {
             margin-right: 5px;
+        }
+
+
+
+        div {
+            width: 100%;
+            position: relative;
+        }
+
+        #first-name-container {
+            margin-right: 5px;
+        }
+
+        label {
+            font-size: 0.8em;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #C6C6C6;
+            cursor: text;
+            height: 1px;
+
         }
 
     }
@@ -57,6 +90,16 @@
     .form-role {
         input {
             width: 217px;
+        }
+
+        label {
+            left: 50px;
+        }
+    }
+
+    .form-email {
+        label {
+            left: 50px;
         }
     }
 

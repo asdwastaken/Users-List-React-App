@@ -101,7 +101,7 @@ export default function Table({
                                     }
                                 </td>
                                 <td id="user-actions">
-                                    {user.role == 'Admin'
+                                    {user.status
                                         ?
                                         <>
                                             <Link className="settings-icon-link" to={`/user/edit/${user.id}`}>

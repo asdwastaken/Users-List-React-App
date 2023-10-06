@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .edit {
   padding-left: 192px;
   padding-right: 76px;
@@ -104,6 +105,8 @@
 .user-setup-container .details-section h1 {
   margin-bottom: 55px;
   margin-right: 100px;
+  font-size: 1.8em;
+  font-weight: 600;
 }
 .user-setup-container .details-section .details-status {
   display: flex;
@@ -112,6 +115,7 @@
 }
 .user-setup-container .details-section .details-status img {
   margin-right: 12px;
+  cursor: pointer;
 }
 .user-setup-container .details-section .details-status span {
   font-size: 0.8em;
@@ -182,7 +186,7 @@
 .user-setup-container .details-section .edit-user-form .submit-edit-form-container {
   display: flex;
   align-items: center;
-  margin-top: 59px;
+  margin-top: 130px;
   position: relative;
 }
 .user-setup-container .details-section .edit-user-form .edit-form-validation {
@@ -196,5 +200,81 @@
   color: #44D36A;
 }
 .user-setup-container .permissions-section {
-  width: 40%;
+  width: 30%;
+}
+.user-setup-container .permissions-section .permissions-heading-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 54px;
+}
+.user-setup-container .permissions-section .permissions-heading-container h1 {
+  font-size: 1.8em;
+  font-weight: 600;
+}
+.user-setup-container .permissions-section .permissions-heading-container span {
+  font-size: 0.8em;
+  font-weight: 300;
+}
+.user-setup-container .permissions-section #super-admin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user-setup-container .permissions-section .permission-group-list,
+.user-setup-container .permissions-section .permission-group {
+  border-bottom: 1px solid #D8D8D8;
+  padding-bottom: 26px;
+  padding-top: 43px;
+}
+.user-setup-container .permissions-section .permission-group-list div {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-bottom: 43px;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
+.user-setup-container .permissions-section .permission-group-list li {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 11px;
+}
+.user-setup-container .permissions-section .permission-group-list li::before {
+  content: "•";
+  position: absolute;
+  font-weight: bold;
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  left: 20px;
+  top: 0;
+}
+.user-setup-container .permissions-section .permission-group-list li img {
+  cursor: pointer;
+}
+.user-setup-container .permissions-section .permission-group-list .hidden {
+  display: none;
+}
+.user-setup-container .permissions-section .permission-group-list .allowed::before {
+  color: #44A0D3;
+}
+.user-setup-container .permissions-section .permission-group-list .forbidden::before {
+  color: #FF0000;
+}
+
+.inactive {
+  opacity: 38%;
+}
+.inactive * {
+  color: #C6C6C6;
+}
+.inactive .edit-form-container div input ~ label {
+  color: #C6C6C6 !important;
+  font-weight: 600;
 }/*# sourceMappingURL=userSetup.css.map */

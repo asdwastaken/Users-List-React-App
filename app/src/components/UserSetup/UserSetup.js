@@ -6,6 +6,7 @@ import keyIcon from '../../content/images/key-icon-active.svg';
 import statusActive from '../../content/images/status-toggle-active.svg';
 import statusDisabled from '../../content/images/status-toggle-disabled.svg';
 import arrowDown from '../../content/images/arrow-down-icon.svg';
+import arrowFormIcon from '../../content/images/arrow-form-icon.svg';
 import { getAll } from '../../services/userService';
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
@@ -156,10 +157,16 @@ export default function UserSetup() {
                                 </div>
 
                                 <div className="edit-form-container">
-                                    <div  >
-                                        <input placeholder='' name='role' value={inputValues.role} onChange={onChangeHandler} disabled={!user.status && 'disabled'} />
-                                        <label htmlFor='role'>* Role</label>
+                                    <div >
+                                        <label htmlFor='role' id='form-role-label'>* Role</label>
+
+                                        <select placeholder='' name='role' onChange={onChangeHandler} className="role-select" value={inputValues.role} disabled={!user.status && 'disabled'}>
+                                            <option value="User">User</option>
+                                            <option value="Admin">Admin</option>
+                                        </select>
+                                        <img src={arrowFormIcon} className="arrow-form-icon" />
                                     </div>
+
                                 </div>
                                 {user.status &&
                                     <div className="submit-edit-form-container">

@@ -78,12 +78,15 @@ export default function NewUserModal() {
 
                     <div className="form-role form-container">
                         <img src={keyIcon} className="form-icon" />
-                        <select placeholder='' name='role' onChange={onChangeHandler} className="role-select" value={inputValues.role}>
-                            {/* <label htmlFor='role'>* Role</label> */}
-                            <option value="User">User</option>
-                            <option value="Admin">Admin</option>
-                        </select>
-                        <img src={arrowDownIcon} className="arrow-form-icon" />
+                        <div id="form-role-container">
+                            <label htmlFor='role'>* Role</label>
+                            <select placeholder='' name='role' onChange={onChangeHandler} className="role-select" value={inputValues.role}>
+
+                                <option value="User">User</option>
+                                <option value="Admin">Admin</option>
+                            </select>
+                            <img src={arrowDownIcon} className="arrow-form-icon" />
+                        </div>
                     </div>
 
                     <div className="submit-form-container">

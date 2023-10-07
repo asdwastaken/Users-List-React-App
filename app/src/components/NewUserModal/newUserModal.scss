@@ -97,18 +97,24 @@
         }
 
         label {
-            left: 50px;
+            color: #33A3DC;
+            top: -25px;
         }
 
         .arrow-form-icon {
             position: absolute;
             bottom: 12px;
-            left: 250px;
+            right: 2px;
+            cursor: pointer;
         }
 
+        #form-role-container {
+            width: 217px;
+            position: relative;
+        }
 
         .role-select {
-            width: 217px;
+            width: 100%;
             border: none;
             border-bottom: 2px solid #C6C6C6;
             outline: none;
@@ -117,7 +123,6 @@
             -webkit-appearance: none;
             color: #C6C6C6;
             cursor: pointer;
-
         }
     }
 

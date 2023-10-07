@@ -72,15 +72,21 @@
   width: 217px;
 }
 .new-user-form .form-role label {
-  left: 50px;
+  color: #33A3DC;
+  top: -25px;
 }
 .new-user-form .form-role .arrow-form-icon {
   position: absolute;
   bottom: 12px;
-  left: 250px;
+  right: 2px;
+  cursor: pointer;
+}
+.new-user-form .form-role #form-role-container {
+  width: 217px;
+  position: relative;
 }
 .new-user-form .form-role .role-select {
-  width: 217px;
+  width: 100%;
   border: none;
   border-bottom: 2px solid #C6C6C6;
   outline: none;

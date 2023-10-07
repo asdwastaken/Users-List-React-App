@@ -150,7 +150,8 @@
         .edit-user-form {
 
             margin-top: 69px;
-            margin-left: 53px;
+            width: 326px;
+            margin-left: 30px;
 
             input {
                 border: none;
@@ -183,18 +184,22 @@
                     width: 100%;
                     position: relative;
                     padding-left: 20px;
+
+                    input {
+                        font-weight: 300;
+                    }
                 }
 
 
                 label {
-                    font-size: 0.8em;
+                    font-size: 0.6em;
                     position: absolute;
                     top: 0;
                     left: 0;
                     color: #C6C6C6;
                     cursor: text;
                     height: 1px;
-
+                    font-weight: 600;
                 }
 
             }
@@ -229,7 +234,7 @@
                 }
             }
 
-            
+
 
             .edit-form-validation {
                 color: #F89797;
@@ -245,6 +250,35 @@
         }
 
 
+        #form-role-label {
+            color: #33A3DC;
+            top: -25px;
+            left: 0;
+        }
+
+
+
+        .role-select {
+            width: 100%;
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid #C6C6C6;
+            outline: none;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            -webkit-appearance: none;
+            cursor: pointer;
+            font-weight: 300;
+
+        }
+
+        .arrow-form-icon {
+            position: absolute;
+            bottom: 12px;
+            right: 2px;
+            cursor: pointer;
+            z-index: -1;
+        }
 
     }
 
@@ -253,6 +287,9 @@
         align-items: center;
         margin-top: 130px;
         position: relative;
+
+
+
     }
 
     .permissions-section {

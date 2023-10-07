@@ -8,17 +8,19 @@ import statusDisabled from '../../content/images/status-toggle-disabled.svg';
 import arrowDown from '../../content/images/arrow-down-icon.svg';
 import arrowFormIcon from '../../content/images/arrow-form-icon.svg';
 import { getAll } from '../../services/userService';
-import { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useContext, useEffect, useState } from 'react';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 
 import Header from '../Header/Header';
 import { validateFields } from '../../functions/validations';
+import { context } from '../../context/context';
 
 
 export default function UserSetup() {
 
 
     const userId = useParams('userId').userId;
+
     const [user, setUser] = useState({});
     const [userPermissions, setUserPermissions] = useState([]);
 
@@ -45,8 +47,8 @@ export default function UserSetup() {
 
 
     const [inputValues, setInputValues] = useState({
-        firstName: '',
-        lastName: '',
+        first_name: '',
+        last_name: '',
         role: '',
     });
 
@@ -59,8 +61,8 @@ export default function UserSetup() {
                 setUserPermissions(Object.entries(foundUser.permissions))
 
                 setInputValues({
-                    firstName: foundUser?.first_name || '',
-                    lastName: foundUser?.last_name || '',
+                    first_name: foundUser?.first_name || '',
+                    last_name: foundUser?.last_name || '',
                     role: foundUser?.role || '',
                 });
             })
@@ -93,6 +95,7 @@ export default function UserSetup() {
     }
 
 
+    
 
 
     return (
@@ -138,21 +141,21 @@ export default function UserSetup() {
                                 </div>
                             }
 
-                            <form className={user.status ? "edit-user-form" : "edit-user-form inactive"}>
+                            <form className={user.status ? "edit-user-form" : "edit-user-form inactive"} >
 
                                 <div className="edit-form-container">
 
                                     <div >
-                                        <input placeholder='' id='first-name-input' type='text' name='firstName' value={inputValues.firstName} onChange={onChangeHandler} disabled={!user.status && 'disabled'} />
-                                        <label htmlFor='firstName'>* First Name</label>
+                                        <input placeholder='' id='first-name-input' type='text' name='first_name' value={inputValues.first_name} onChange={onChangeHandler} disabled={!user.status && 'disabled'} />
+                                        <label htmlFor='first_name'>* First Name</label>
                                     </div>
 
                                 </div>
 
                                 <div className="edit-form-container">
                                     <div >
-                                        <input placeholder='' type='text' name='lastName' value={inputValues.lastName} onChange={onChangeHandler} disabled={!user.status && 'disabled'} />
-                                        <label htmlFor='lastName'>* Last Name</label>
+                                        <input placeholder='' type='text' name='last_name' value={inputValues.last_name} onChange={onChangeHandler} disabled={!user.status && 'disabled'} />
+                                        <label htmlFor='last_name'>* Last Name</label>
                                     </div>
                                 </div>
 

@@ -1,16 +1,18 @@
 import './header.css';
 import searchIcon from '../../content/images/search-icon.svg';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 
 
 export default function Header() {
 
     const userId = useParams('userId').userId;
+    const location = useLocation();
+    const isDeletePath = location.pathname.includes('delete');
 
     return (
         <div className="header">
             <div className="header-container">
-                {userId
+                {userId && !isDeletePath 
                     ?
                     <h1>User Setup</h1>
 

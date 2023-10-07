@@ -3,21 +3,18 @@ import './userSetup.css';
 import userIcon from '../../content/images/user-icon.svg';
 import userIconBG from '../../content/images/user-icon-bg-2x.svg';
 import keyIcon from '../../content/images/key-icon-active.svg';
-import statusActive from '../../content/images/status-toggle-active.svg';
-import statusDisabled from '../../content/images/status-toggle-disabled.svg';
-import arrowDown from '../../content/images/arrow-down-icon.svg';
-import arrowFormIcon from '../../content/images/arrow-form-icon.svg';
+
 import { getAll } from '../../services/userService';
-import { useContext, useEffect, useState } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { validateFields } from '../../functions/validations';
 
 import Header from '../Header/Header';
-import { validateFields } from '../../functions/validations';
-import { context } from '../../context/context';
+import DetailsSection from './DetailsSection/DetailsSection';
+import PermissionsSection from './PermissionsSection/PermissionsSection';
 
 
 export default function UserSetup() {
-
 
     const userId = useParams('userId').userId;
 
@@ -95,7 +92,7 @@ export default function UserSetup() {
     }
 
 
-    
+
 
 
     return (
@@ -126,159 +123,21 @@ export default function UserSetup() {
                             {user.status && < Link className="resend-invite-btn">Resend the invite</Link>}
                         </div>
 
-                        <div className="details-section">
-                            <h1>Details</h1>
-                            {user.status
-                                ?
-                                <div className="details-status">
-                                    <img src={statusActive} onClick={() => toggleStatus(user.status)} />
-                                    <span>The user is <b>Active</b></span>
-                                </div>
-                                :
-                                <div className="details-status">
-                                    <img src={statusDisabled} onClick={() => toggleStatus(user.status)} />
-                                    <span>The user is <b>Inactive</b></span>
-                                </div>
-                            }
+                        <DetailsSection
+                            user={user}
+                            toggleStatus={toggleStatus}
+                            inputValues={inputValues}
+                            onChangeHandler={onChangeHandler}
+                            requiredFields={requiredFields} />
 
-                            <form className={user.status ? "edit-user-form" : "edit-user-form inactive"} >
 
-                                <div className="edit-form-container">
-
-                                    <div >
-                                        <input placeholder='' id='first-name-input' type='text' name='first_name' value={inputValues.first_name} onChange={onChangeHandler} disabled={!user.status && 'disabled'} />
-                                        <label htmlFor='first_name'>* First Name</label>
-                                    </div>
-
-                                </div>
-
-                                <div className="edit-form-container">
-                                    <div >
-                                        <input placeholder='' type='text' name='last_name' value={inputValues.last_name} onChange={onChangeHandler} disabled={!user.status && 'disabled'} />
-                                        <label htmlFor='last_name'>* Last Name</label>
-                                    </div>
-                                </div>
-
-                                <div className="edit-form-container">
-                                    <div >
-                                        <label htmlFor='role' id='form-role-label'>* Role</label>
-
-                                        <select placeholder='' name='role' onChange={onChangeHandler} className="role-select" value={inputValues.role} disabled={!user.status && 'disabled'}>
-                                            <option value="User">User</option>
-                                            <option value="Admin">Admin</option>
-                                        </select>
-                                        <img src={arrowFormIcon} className="arrow-form-icon" />
-                                    </div>
-
-                                </div>
-                                {user.status &&
-                                    <div className="submit-edit-form-container">
-                                        <input type='submit' value="Save Changes" className={requiredFields ? "send-edit-input validated-btn" : "send-edit-input"} disabled={!requiredFields && true} />
-
-                                        {!requiredFields
-                                            ?
-                                            <span className="edit-form-validation">Fill in all the fields</span>
-                                            :
-                                            <span className="edit-form-validation validated">Good to go</span>
-                                        }
-
-                                    </div>}
-
-                            </form>
-
-                        </div>
-
-                        <div className="permissions-section">
-                            <div className="permissions-heading-container">
-                                <h1>Permissions</h1>
-                                <span>{user.role}</span>
-                            </div>
-
-                            <div className={user.status ? "permissions-container" : "permissions-container inactive"}>
-                                <div className="permission-group" id="super-admin">
-                                    <b><span>Super Admin</span></b>
-                                    {userPermissions.every(x => x[1] == true)
-                                        ?
-                                        <img src={statusActive} />
-                                        :
-                                        <img src={statusDisabled} />
-                                    }
-                                </div>
-                                <div className="permission-group-container">
-                                    < ul className="permission-group-list" >
-                                        <div onClick={user.status ? () => toggleList('group1') : null} style={openPermissionGroups['group1'] ? { marginBottom: "0" } : {}}>
-                                            <img src={arrowDown} />
-                                            <span>Permission group 1</span>
-                                        </div>
-
-                                        {userPermissions.slice(0, 5).map((x, i) => {
-                                            return (
-                                                <li key={i} className={(openPermissionGroups['group1'] ? "hidden" : (x[1] ? "allowed" : "forbidden"))}>
-
-                                                    Permission {x[0].split('_')[1]}
-                                                    {
-                                                        x[1]
-                                                            ?
-                                                            <img src={statusActive} onClick={user.status ? () => togglePermission(x) : null} />
-                                                            :
-                                                            <img src={statusDisabled} onClick={user.status ? () => togglePermission(x) : null} />
-                                                    }
-                                                </li>
-                                            )
-                                        })}
-                                    </ul>
-
-                                    < ul className="permission-group-list" >
-                                        <div onClick={user.status ? () => toggleList('group2') : null} style={openPermissionGroups['group2'] ? { marginBottom: "0" } : {}}>
-                                            <img src={arrowDown} />
-                                            <span>Permission group 2</span>
-                                        </div>
-
-                                        {userPermissions.slice(5, 10).map((x, i) => {
-                                            return (
-                                                <li key={i} className={(openPermissionGroups['group2'] ? "hidden" : (x[1] ? "allowed" : "forbidden"))}>
-
-                                                    Permission {x[0].split('_')[1]}
-                                                    {
-                                                        x[1]
-                                                            ?
-                                                            <img src={statusActive} onClick={user.status ? () => togglePermission(x) : null} />
-                                                            :
-                                                            <img src={statusDisabled} onClick={user.status ? () => togglePermission(x) : null} />
-                                                    }
-                                                </li>
-                                            )
-                                        })}
-                                    </ul>
-
-                                    < ul className="permission-group-list" >
-                                        <div onClick={user.status ? () => toggleList('group3') : null} style={openPermissionGroups['group3'] ? { marginBottom: "0" } : {}}>
-                                            <img src={arrowDown} />
-                                            <span>Permission group 3</span>
-                                        </div>
-
-                                        {userPermissions.slice(10, 15).map((x, i) => {
-                                            return (
-                                                <li key={i} className={(openPermissionGroups['group3'] ? "hidden" : (x[1] ? "allowed" : "forbidden"))}>
-
-                                                    Permission {x[0].split('_')[1]}
-                                                    {
-                                                        x[1]
-                                                            ?
-                                                            <img src={statusActive} onClick={user.status ? () => togglePermission(x) : null} />
-                                                            :
-                                                            <img src={statusDisabled} onClick={user.status ? () => togglePermission(x) : null} />
-                                                    }
-                                                </li>
-                                            )
-                                        })}
-                                    </ul>
-
-                                </div>
-                            </div>
-
-                        </div>
-
+                        <PermissionsSection 
+                            user={user}
+                            userPermissions={userPermissions}
+                            toggleList={toggleList}
+                            openPermissionGroups={openPermissionGroups}
+                            togglePermission={togglePermission}
+                            />
                     </div>
                 </div >
             </div >

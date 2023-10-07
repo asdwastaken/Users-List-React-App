@@ -25,8 +25,13 @@ export const ContextProvider = ({
         }
 
         setUsers(state => {
-            const updatedState = state.filter(x => x.id !== userId);
-            return [...updatedState, updatedUser]
+            const updatedState = state.map(user => {
+                if(user.id === userId){
+                    return updatedUser;
+                }
+                return user;
+            });
+            return updatedState;
         })
 
     }
@@ -54,7 +59,7 @@ export const ContextProvider = ({
         setNewUserModal(!newUserModal);
     }
 
-    const toggleDeleteModal = ()=>{
+    const toggleDeleteModal = () => {
         setDeleteUserModal(!deleteUserModal);
 
     }

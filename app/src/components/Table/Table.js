@@ -7,7 +7,7 @@ import keyIconActive from '../../content/images/key-icon-active.svg';
 import keyIconDisabled from '../../content/images/key-icon-disabled.svg';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { getAll, getOne } from '../../services/userService';
+import { getAll } from '../../services/userService';
 
 
 
@@ -109,7 +109,7 @@ export default function Table({
 
 
                 <tbody>
-                    {users.sort((a, b) => a.id - b.id).map(user => {
+                    {users.map(user => {
                         return (
                             <tr className={user.status ? "row" : "row disabled"} key={user.id}>
                                 <td className="table-user-icon-container">

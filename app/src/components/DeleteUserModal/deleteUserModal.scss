@@ -75,4 +75,10 @@
     border: none;
     margin-top: 43px;
     cursor: pointer;
+    font-weight: 600;
+
+    &:hover{
+    background-color: #f57878;
+
+    }
 }

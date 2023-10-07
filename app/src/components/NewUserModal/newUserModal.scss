@@ -142,6 +142,10 @@
     .validated-btn {
         color: #FFFFFF;
         background-color: #33A3DC;
+
+        &:hover {
+            background-color: rgb(47, 148, 199)
+        }
     }
 
     .submit-form-container {

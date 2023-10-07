@@ -33,48 +33,36 @@ export default function Table({
     }, [records])
 
     const sortUsersByName = () => {
-        getAll()
-            .then((result) => {
-                const sortedUsers = result.slice(0, records);
-                if (sortOrder === 'asc') {
-                    sortedUsers.sort((a, b) => a.first_name.localeCompare(b.first_name));
-                    setSortOrder('desc');
-                } else {
-                    sortedUsers.sort((a, b) => b.first_name.localeCompare(a.first_name));
-                    setSortOrder('asc');
-                }
-                setUsers(sortedUsers);
-            })
+
+        if (sortOrder === 'asc') {
+            users.sort((a, b) => a.first_name.localeCompare(b.first_name));
+            setSortOrder('desc');
+        } else {
+            users.sort((a, b) => b.first_name.localeCompare(a.first_name));
+            setSortOrder('asc');
+        }
     }
 
+
     const sortUsersByRole = () => {
-        getAll()
-            .then((result) => {
-                const sortedUsers = result.slice(0, records);
-                if (sortRole === false) {
-                    sortedUsers.sort((a, b) => a.role.localeCompare(b.role));
-                    setSortRole(true);
-                } else {
-                    sortedUsers.sort((a, b) => b.role.localeCompare(a.role));
-                    setSortRole(false);
-                }
-                setUsers(sortedUsers);
-            })
+        if (sortRole === false) {
+            users.sort((a, b) => a.role.localeCompare(b.role));
+            setSortRole(true);
+        } else {
+            users.sort((a, b) => b.role.localeCompare(a.role));
+            setSortRole(false);
+        }
+
     }
 
     const sortUsersByStatus = () => {
-        getAll()
-            .then((result) => {
-                const sortedUsers = result.slice(0, records);
                 if (sortStatus === 'User') {
-                    sortedUsers.sort((a, b) => a.status - b.status);
+                    users.sort((a, b) => a.status - b.status);
                     setSortStatus('Admin');
                 } else {
-                    sortedUsers.sort((a, b) => b.status - a.status);
+                    users.sort((a, b) => b.status - a.status);
                     setSortStatus('User');
                 }
-                setUsers(sortedUsers);
-            })
     }
 
 

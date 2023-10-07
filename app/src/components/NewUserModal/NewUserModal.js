@@ -8,7 +8,6 @@ import arrowDownIcon from '../../content/images/arrow-form-icon.svg';
 import { useContext, useEffect, useState } from 'react';
 import { context } from '../../context/context';
 import { validateFields } from '../../functions/validations';
-import { create } from '../../services/userService';
 
 
 
@@ -43,12 +42,8 @@ export default function NewUserModal() {
             status: true,
         };
 
-        create(newUser)
-            .then(() => {
-                setUsers(state => [...state, newUser])
-                toggleModal()
-            })
-
+        setUsers(state => [...state, newUser])
+        toggleModal()
 
     }
 

@@ -196,7 +196,7 @@ export default function UserSetup() {
                                 </div>
                                 <div className="permission-group-container">
                                     < ul className="permission-group-list" >
-                                        <div onClick={user.status ? () => toggleList('group1') : null}>
+                                        <div onClick={user.status ? () => toggleList('group1') : null} style={openPermissionGroups['group1'] ? { marginBottom: "0" } : {}}>
                                             <img src={arrowDown} />
                                             <span>Permission group 1</span>
                                         </div>
@@ -219,7 +219,7 @@ export default function UserSetup() {
                                     </ul>
 
                                     < ul className="permission-group-list" >
-                                        <div onClick={user.status ? () => toggleList('group2') : null}>
+                                        <div onClick={user.status ? () => toggleList('group2') : null} style={openPermissionGroups['group2'] ? { marginBottom: "0" } : {}}>
                                             <img src={arrowDown} />
                                             <span>Permission group 2</span>
                                         </div>
@@ -242,7 +242,7 @@ export default function UserSetup() {
                                     </ul>
 
                                     < ul className="permission-group-list" >
-                                        <div onClick={user.status ? () => toggleList('group3') : null}>
+                                        <div onClick={user.status ? () => toggleList('group3') : null} style={openPermissionGroups['group3'] ? { marginBottom: "0" } : {}}>
                                             <img src={arrowDown} />
                                             <span>Permission group 3</span>
                                         </div>
